@@ -32,6 +32,7 @@
     "cli-handle-unhandled": "^1.1.1",
     "cli-meow-help": "^2.0.2",
     "cli-welcome": "^2.2.2",
+    "globby": "^11.0.3",
     "meow": "^9.0.0",
     "resize-optimize-images": "^1.1.2"
   },
