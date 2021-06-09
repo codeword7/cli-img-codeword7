@@ -24,16 +24,12 @@ const start = async () => {
 
   if (source) {
     const images = await globby(source)
-    const defaultOptions = {
-      width: 1920,
-      quality: 90
-    }
 
     const options = {
       ...defaultOptions,
       images,
-      width,
-      quality
+      width: width ? width : 1920,
+      quality: quality ? quality : 90
     }
 
     await resizeOptimizeImages(options)
