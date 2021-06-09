@@ -8,12 +8,12 @@ const flags = {
     desc: 'Source file or directory of images'
   },
   width: {
-    type: 'string',
+    type: 'number',
     alias: 'w',
     desc: 'Width of images in pixels'
   },
   quality: {
-    type: 'string',
+    type: 'number',
     alias: 'q',
     desc: 'Quality of images'
   },
