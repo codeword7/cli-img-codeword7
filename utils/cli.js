@@ -2,6 +2,21 @@ const meow = require('meow');
 const meowHelp = require('cli-meow-help');
 
 const flags = {
+  source: {
+    type: 'string',
+    alias: 's',
+    desc: 'Source file or directory of images'
+  },
+  width: {
+    type: 'string',
+    alias: 'w',
+    desc: 'Width of images in pixels'
+  },
+  quality: {
+    type: 'string',
+    alias: 'q',
+    desc: 'Quality of images'
+  },
   clear: {
     type: `boolean`,
     default: true,

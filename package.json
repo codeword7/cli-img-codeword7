@@ -32,7 +32,8 @@
     "cli-handle-unhandled": "^1.1.1",
     "cli-meow-help": "^2.0.2",
     "cli-welcome": "^2.2.2",
-    "meow": "^9.0.0"
+    "meow": "^9.0.0",
+    "resize-optimize-images": "^1.1.2"
   },
   "devDependencies": {
     "prettier": "^2.3.1"
