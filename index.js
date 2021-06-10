@@ -8,6 +8,8 @@
  */
 const resizeOptimizeImages = require('resize-optimize-images')
 const alert = require('cli-alerts-codeword7')
+const ora = require('ora');
+const { yellow: y, green: g } = require('chalk')
 
 const globby = require('globby')
 const init = require('./utils/init')
@@ -17,6 +19,7 @@ const log = require('./utils/log')
 const input = cli.input
 const flags = cli.flags
 const { clear, debug, source, width, quality } = flags
+const spinner = ora({ text: '' })
 
 const start = async () => {
   init({ clear })
@@ -32,13 +35,23 @@ const start = async () => {
       quality: quality ? quality : 90
     }
 
+    spinner.start(`${y(`RUNNING`)} optim and resize task on ${images.length} images...`)
     await resizeOptimizeImages(options)
+    spinner.succeed(`${g(`COMPLETED`)} optim and resize task on ${images.length} images...`)
+
+    alert({
+      type: 'success',
+      name: 'DONE',
+      msg: `Resize and optimized ${images.length} images`
+    })
+
   } else {
     alert({
       type: 'error',
       msg: 'You forgot to specify --source flag'
     })
   }
+  console.log()
   debug && log(flags)
 }
 
