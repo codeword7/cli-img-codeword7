@@ -29,7 +29,6 @@ const start = async () => {
     const images = await globby(source)
 
     const options = {
-      ...defaultOptions,
       images,
       width: width ? width : 1920,
       quality: quality ? quality : 90
